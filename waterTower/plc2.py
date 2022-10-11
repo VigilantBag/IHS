@@ -7,13 +7,13 @@ from minicps.devices import PLC
 from utils import PLC2_DATA, STATE, PLC2_PROTOCOL
 from utils import PLC_SAMPLES, PLC_PERIOD_SEC
 from utils import IP
-
+#from utils import PLC2_TAGS
 import time
 
 PLC0_ADDR = IP['plc0']
 PLC1_ADDR = IP['plc1']
 PLC2_ADDR = IP['plc2']
-
+print(PLC2_ADDR)
 P201 = ('P201', 2)
 
 
@@ -37,10 +37,11 @@ class SwatPLC2(PLC):
 
         count = 0
         while(count <= PLC_SAMPLES):
-
-            p201 = int(self.receive(P201, PLC2_ADDR))
+            print(self.receive(P201, PLC2_ADDR))
+            p201 = float(self.get(P201))
             if p201 != 0:
                 self.set(P201, p201)
+                self.send(P201, p201, PLC2_ADDR)
                 print("DEBUG PLC2 - received p201: %f" % p201)
 
             time.sleep(PLC_PERIOD_SEC)

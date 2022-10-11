@@ -59,7 +59,7 @@ class RawWaterTank(Tank):
                 self.set(FIT101, 0.00)
 
             # outflows volumes
-            p201 = int(self.get(P201))
+            p201 = float(self.get(P201))
             if p201 == 1:
                 outflow = PUMP_FLOWRATE_OUT * PP_PERIOD_HOURS
                 print("DEBUG RawWaterTank outflow: ", outflow)

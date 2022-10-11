@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script src="//code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/socket.io/1.3.6/socket.io.min.js"></script>
+    <script src="static/js/application.js"></script>
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="static/css/style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="jumbotron">
+            <h1>Water Tower Autonomous System</h1>
+            <p>Remote ,modern and highly secure administration.</p>
+        </div>
+    </div>
+
+
+    <div class="container" id="content">
+        <div class="row">
+            <a href="http://localhost:8080/start"  target="_blank" class="btn btn-primary">Start</a>
+            <a href="http://localhost:8080/restart" target="_blank" class="btn btn-warning">Restart</a>
+            <a href="http://localhost:8080/dos" target="_blank" class="btn btn-danger">DOS - Failed MITM or Aggresive nmap</a>
+        </div>
+        <div id="log">
+        </div> <!-- /#log -->
+    </div>   
+
+
+</body>
+</html>

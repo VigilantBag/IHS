@@ -39,10 +39,10 @@ class SwatPLC0(PLC):
         count = 0
         while(count <= PLC_SAMPLES):
 
-            mv001 = int(self.receive(MV001, PLC0_ADDR))
+            mv001 = float(self.get(MV001))
             print("DEBUG PLC0 - received mv001: %f" % mv001)
             if mv001 != 0:
-                self.set(MV001, mv001)
+                self.send(MV001, mv001, PLC0_ADDR)
 
             time.sleep(PLC_PERIOD_SEC)
             count += 1
